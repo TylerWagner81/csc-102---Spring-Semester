@@ -13,12 +13,113 @@
         UAT Space Program
     </h1>
 
-    <img src="UATspaceLogo.jpg" />
-    
+    <img src="UATspaceLogo.jpg" alt="UAT Space Logo" /> <!--This is how you add an image-->
+
+    <br/>
+
     <p> <!--This is the paragraph tag; main text of the page goes here-->
         This is a paragraph tag test
     </p>
 
-    <input type="button" value="Click Me" onclick="alert('You clicked me!');" />  <!--This is a button tag; uses javascript to preform actions-->
+    <input type="button" value="Click Me" onclick="alert('Ouch! Not so hard!');" />  <!--This is a button tag; uses javascript to preform actions-->
+
+    <!--This will create the countdown timer on the page-->
+    <p>
+        Countdown: <span id="countdown"></span>
+    </p>
+    
+    <script>
+        //This will track the value of the countdown
+        var currTime = 50;
+
+        //This tracks the current timeout
+        var timeout = 0;
+
+        //This creates the 5 second delay using miliseconds
+        var timeoutIncrement = 5000;
+
+        //This shortens the amount of numbers needed in the code
+        var countdownElem = document.getElementById("countdown");
+
+        //This will decrease the displayed coundown by 5 
+        setTimeout(function(){
+            countdownElem.innerHTML = currTime;
+            currTime = currTime - 5;
+
+        }, timeout);
+        timeout = timeout + timeoutIncrement;
+
+        setTimeout(function(){
+            countdownElem.innerHTML = currTime;
+            currTime = currTime - 5;
+
+        }, timeout);
+        timeout = timeout + timeoutIncrement;
+
+        setTimeout(function(){
+            countdownElem.innerHTML = currTime;
+            currTime = currTime - 5;
+
+        }, timeout);
+        timeout = timeout + timeoutIncrement;
+
+        setTimeout(function(){
+            countdownElem.innerHTML = currTime;
+            currTime = currTime - 5;
+
+        }, timeout);
+        timeout = timeout + timeoutIncrement;
+
+        setTimeout(function(){
+            countdownElem.innerHTML = currTime;
+            currTime = currTime - 5;
+
+        }, timeout);
+        timeout = timeout + timeoutIncrement;
+
+        setTimeout(function(){
+            countdownElem.innerHTML = currTime;
+            currTime = currTime - 5;
+
+        }, timeout);
+        timeout = timeout + timeoutIncrement;
+
+        setTimeout(function(){
+            countdownElem.innerHTML = currTime;
+            currTime = currTime - 5;
+
+        }, timeout);
+        timeout = timeout + timeoutIncrement;
+
+        setTimeout(function(){
+            countdownElem.innerHTML = currTime;
+            currTime = currTime - 5;
+
+        }, timeout);
+        timeout = timeout + timeoutIncrement;
+
+        setTimeout(function(){
+            countdownElem.innerHTML = currTime;
+            currTime = currTime - 5;
+
+        }, timeout);
+        timeout = timeout + timeoutIncrement;
+
+        setTimeout(function(){
+            countdownElem.innerHTML = currTime;
+            currTime = currTime - 5;
+
+        }, timeout);
+        timeout = timeout + timeoutIncrement;
+
+        //This is the last setTimeout; coundown is now 0
+        setTimeout(function(){
+           alert("Blastoff!")
+            countdownElem.innerHTML = "We have liftoff";
+        }, timeout);
+        timeout = timeout + timeoutIncrement;
+        
+    </script>
+   
 </body>
 </html>
