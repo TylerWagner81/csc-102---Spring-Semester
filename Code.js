@@ -18,82 +18,31 @@ function runTimer(){
      //This creates the 5 second delay using miliseconds
      var timeoutIncrement = 5000;
 
-      //This will decrease the displayed coundown by 5 
-      setTimeout(function(){
-        countdownElem.innerHTML = currTime;
-        currTime = currTime - 5;
+     //This creates the parameters of the loop
+     for(var counter=0; counter < 11; counter++){
 
-    }, timeout);
-    timeout = timeout + timeoutIncrement;
-
+    //This is the beginning of our loop
     setTimeout(function(){
-        countdownElem.innerHTML = currTime;
+
+        //This means if the counter reaches 0 then it displays an alert
+        if(currTime == 0){
+            alert("Blastoff!")
+            countdownElem.innerHTML = "We have liftoff";
+        }
+
+        //This tracks how much time is left on the counter and displays a message when it passes 25 seconds left
+        else if(currTime < 25){
+            countdownElem.innerHTML =  "Warning!! Less than ½ way to launch! Time left = " + currTime;
+        }
+
+        //If the counter has 25 seconds or more then the message does not change
+        else{
+            countdownElem.innerHTML = currTime;
+        }
+
+        //This code is what decreases our counter by 5 at the speed dictated by the timeoutIncrement variable
         currTime = currTime - 5;
-
     }, timeout);
     timeout = timeout + timeoutIncrement;
-
-    setTimeout(function(){
-        countdownElem.innerHTML = currTime;
-        currTime = currTime - 5;
-
-    }, timeout);
-    timeout = timeout + timeoutIncrement;
-
-    setTimeout(function(){
-        countdownElem.innerHTML = currTime;
-        currTime = currTime - 5;
-
-    }, timeout);
-    timeout = timeout + timeoutIncrement;
-
-    setTimeout(function(){
-        countdownElem.innerHTML = currTime;
-        currTime = currTime - 5;
-
-    }, timeout);
-    timeout = timeout + timeoutIncrement;
-
-    setTimeout(function(){
-        countdownElem.innerHTML = currTime;
-        currTime = currTime - 5;
-
-    }, timeout);
-    timeout = timeout + timeoutIncrement;
-
-    setTimeout(function(){
-        countdownElem.innerHTML = currTime;
-        currTime = currTime - 5;
-
-    }, timeout);
-    timeout = timeout + timeoutIncrement;
-
-    setTimeout(function(){
-        countdownElem.innerHTML = currTime;
-        currTime = currTime - 5;
-
-    }, timeout);
-    timeout = timeout + timeoutIncrement;
-
-    setTimeout(function(){
-        countdownElem.innerHTML = currTime;
-        currTime = currTime - 5;
-
-    }, timeout);
-    timeout = timeout + timeoutIncrement;
-
-    setTimeout(function(){
-        countdownElem.innerHTML = currTime;
-        currTime = currTime - 5;
-
-    }, timeout);
-    timeout = timeout + timeoutIncrement;
-
-    //This is the last setTimeout; coundown is now 0
-    setTimeout(function(){
-       alert("Blastoff!")
-        countdownElem.innerHTML = "We have liftoff";
-    }, timeout);
-    timeout = timeout + timeoutIncrement;
-
+     }
 }
