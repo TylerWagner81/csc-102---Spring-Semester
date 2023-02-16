@@ -6,6 +6,46 @@ function startButtonClick(){}
 //Empty function; Code will be added later
 function stopButtonClick(){}
 
+//This function asks for the users first and last names and then the badge number
+//Names need to be less than 20 characters and the badge needs to be less than 4 characters
+function getUserInput(){
+
+    //This establishes fullName as a variable
+    var fullName = "";
+
+    //This sets the default badgeNumber to 0
+    var badgeNumber = 0;
+
+    //Our first loop checks the first and last names and makes sure they aren't too long
+    do{
+        //These two lines assign the variables for firstName and lastName the values entered by the user
+        var firstName = prompt("What is your first name? ");
+        var lastName = prompt("What is your last name? ");
+
+        //This line combines the first and last name variables into a fullName variable 
+        fullName = firstName + " " + lastName;
+
+        //checks the length of the full name
+        if (fullName.length > 20){
+            alert("Please use a name shorter than 20 characters, the name you entered was: " + fullName.length);
+        }
+    }
+    while(fullName.length > 20);
+
+    //The second loop checks for a badge number and makes sure it isn't longer than 3 characters
+    do{
+        //here is where the user enters their badge number
+        badgeNumber = prompt("Enter your badge number here. ");
+
+        if (badgeNumber > 999){
+            alert("Badge number invalid")
+        }
+    }
+    while(badgeNumber > 999);
+
+    return fullName + " " + badgeNumber;
+}
+
 
 //This is our newest countdown function
 function runTimer(){

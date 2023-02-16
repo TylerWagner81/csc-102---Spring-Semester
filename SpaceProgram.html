@@ -6,9 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Space Page</title>
+
     <!--This links the JavaScript and HTML-->
     <script src = "Code.js"></script>
 
+    <!--This is how you change the style of the html page.-->
+    <style>
+        /*This line changes everything that falls inside of the body tags*/
+        body{
+            background-color: beige;
+        }
+        /*This changes how all of the paragraph tags look*/
+        p{
+            font-size: medium;
+            font-style: oblique;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        /*This changes the style of the title*/
+        h1{
+            font-size: 200;
+        }
+        /*this changed specifically the information that was provided by the user*/
+        .userInfo{
+            font-size: larger;
+            font-style: bold;
+            font-family: sans-serif;
+        }
+    </style>
 </head>
 <body> <!--Everything that appears on the page-->
     
@@ -24,6 +48,11 @@
         This is a paragraph tag test
     </p>
 
+    <p>
+        <!-- This is the welcome text with the users full name and badge number-->
+        Welcome, <span id="userNameBadge" class = "userInfo"></span>
+    </p>
+
     <input type="button" value="!!Click Me!!" onclick="alert('Ouch! Not so hard!');" />  <!--This is a button tag; uses javascript to preform actions-->
 
     <!--This will create the countdown timer on the page-->
@@ -33,6 +62,12 @@
     
     <script>
        
+       //this variable calls our loop for the full name and assigns it to userInfo
+      var userInfo = getUserInput();
+
+      //this calls userInfo and uses it in place of userNameBadge
+      document.getElementById("userNameBadge").innerHTML = userInfo
+
         //This shortens the amount of numbers needed in the code
         var countdownElem = document.getElementById("countdown");
 
