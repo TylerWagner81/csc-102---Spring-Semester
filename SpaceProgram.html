@@ -59,20 +59,22 @@
     <p>
         Countdown: <span id="countdown"></span>
     </p>
+
+    <!--This line creates a button to start the counddown-->
+    <button type = "button" onclick="startButtonClick();" id="btnStart">Begin Countdown</button>
+
+    <!--Creates the stop button for the countdown and gives it an id-->
+    <button type = "button" onclick="stopButtonClick();" id="btnStop" disabled = "true"> Stop couhtdown </button>
     
     <script>
        
        //this variable calls our loop for the full name and assigns it to userInfo
-      var userInfo = getUserInput();
+     // var userInfo = getUserInput();
 
       //this calls userInfo and uses it in place of userNameBadge
-      document.getElementById("userNameBadge").innerHTML = userInfo
+      //document.getElementById("userNameBadge").innerHTML = userInfo
 
-        //This shortens the amount of numbers needed in the code
-        var countdownElem = document.getElementById("countdown");
-
-       //This calls the funtion from the JS to the HTML
-        runTimer(countdownElem)
+       
         
     </script>
    

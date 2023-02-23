@@ -1,10 +1,32 @@
+//Creates an array to hold our values
+var arrInterval = new Array();
 
+//Function to begin the coundown when the button is clicked
+function startButtonClick(){
 
-//Empty function; Code will be added later
-function startButtonClick(){}
+    //These two lines disable the start coundown button once it has been clicked
+    document.getElementById("btnStart").disabled = true;
+    document.getElementById("btnStop").disabled = false;
 
-//Empty function; Code will be added later
-function stopButtonClick(){}
+     //This shortens the amount of numbers needed in the code
+     var countdownElem = document.getElementById("countdown");
+
+     //This calls the funtion from the JS to the HTML
+      runTimer(countdownElem)
+}
+
+//Function to end the countdown when the button is clicked
+function stopButtonClick(){
+
+    //These lines disable the stop coundown button once it has been clicked
+    document.getElementById("btnStart").disabled = false;
+    document.getElementById("btnStop").disabled = true;
+
+    //Loop that uses our Array to track the values of the counter
+    for (counter = 0; counter < 11; counter++){
+        clearTimeout(arrInterval[counter]);
+    }
+}
 
 //This function asks for the users first and last names and then the badge number
 //Names need to be less than 20 characters and the badge needs to be less than 4 characters
@@ -48,7 +70,9 @@ function getUserInput(){
 
 
 //This is our newest countdown function
-function runTimer(){
+            countdownElem.innerHTML =  "Warning!! Less than ½ way to launch! Time left = " + currTime;
+    
+    function runTimer(countdownElem){
      //This will track the value of the countdown
      var currTime = 50;
 
@@ -61,8 +85,8 @@ function runTimer(){
      //This creates the parameters of the loop
      for(var counter=0; counter < 11; counter++){
 
-    //This is the beginning of our loop
-    setTimeout(function(){
+        //This is the beginning of our loop and assigns a value based on our Array 
+        arrInterval[counter] = setTimeout(function(){
 
         //This means if the counter reaches 0 then it displays an alert
         if(currTime == 0){
