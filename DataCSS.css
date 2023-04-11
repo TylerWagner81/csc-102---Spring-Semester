@@ -1,7 +1,11 @@
 body{
     width: 100%;
+    background-color: white;
+    color: #000;
+    background-image: ;
+    
 }
-table, tr{
+table, td{
     border: 1px solid black;
 }
 

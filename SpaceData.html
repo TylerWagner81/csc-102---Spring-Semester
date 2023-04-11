@@ -5,26 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Space Data</title>
+
     <!--This links my CSS page to my html-->
     <link rel="stylesheet" href="DataCSS.css">
+
     <!--This is the link for my JavaScript page-->
     <script src="SpaceData.js"></script>
-    <style>
+    <script src="dataLoader.js"></script>
 
+    <style>
+        body{
+            background-image: url('background.avif');
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
     </style>
 
 </head>
 <body>
+
+    <script>
+        var index = 0;
+        var data = getData();
+    </script>
+
     <h1>Space Program Data</h1>
     <!--This imported an image and chose the size-->
-    <img src="UAT_Space.jpg" width="200px">
-    <br>
-    <!--This creates neccessary text for tracking the current time-->
-    The current time is: <span id="timeStamp">Press start for the current time</span>
-    <br>
-    <!--These two lines created the start/stop buttons respectavely-->
-    <button id="startButton" onclick="start();">Start</button>
-    <button id="stopButton" onclick="stop();">Stop</button>
+    <img src="UAT_Space-removebg-preview.png" width="200px">
     <br>
     <!--The following lines create a table and put the names and values for various pieces of data-->
     <table id="data">
@@ -33,7 +40,7 @@
             <th>Reading</th>
         </thead>
         <tbody>
-            <tr id="seconds">
+            <tr id="seconds_data">
                 <td>Time Elapsed</td>
                 <td>1210 Seconds</td>
             </tr>
@@ -119,5 +126,12 @@
             </tr>
         </tbody>
     </table>
+    <br>
+    <!--This creates neccessary text for tracking the current time-->
+    The current time is: <span id="timeStamp">Press start for the current time</span>
+    <br>
+    <!--These two lines created the start/stop buttons respectavely-->
+    <button id="startButton" onclick="start();">Start</button>
+    <button id="stopButton" onclick="stop();">Stop</button>
 </body>
 </html>
