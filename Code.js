@@ -1,3 +1,25 @@
+//The function that contols the audio that we want on our page
+function playSound(soundSrc){
+    var sound = document.createElement("audio");
+    sound.src = soundSrc;
+    sound.setAttribute("controls", "auto");
+    document.body.appendChild(sound);
+
+    //This allows a function to play the audio
+    play = function(){
+        sound.play();
+    }
+
+    //This allows a function to pause the audio
+    stop = function(){
+        sound.pause();
+    }
+}
+
+
+
+
+
 //Creates an array to hold our values
 var arrInterval = new Array();
 
